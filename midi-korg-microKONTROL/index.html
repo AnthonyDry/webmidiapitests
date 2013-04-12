@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>microKONTROL Browser Midi Test</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Anthony Dry" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link href='http://fonts.googleapis.com/css?family=Great+Vibes|Squada+One' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<!-- The Web MIDI polyfill by cwilso @ github -->
+   		 <script src='http://cwilso.github.com/WebMIDIAPIShim/WebMIDIAPI.js'></script>
+		<script type="text/javascript" src="js/midi.js"></script>
+		<script type="text/javascript" src="js/visualizer.js"></script>
+	</head>
+	<body>
+		<div>
+			<header>
+				<h1>Example browser MIDI Input</h1>
+			</header>
+			<div id="wrapper">
+				<div class="sidebarleft"></div>
+				<div id="synthbody">
+					<div id="synthControl">
+						<div class="screws left"></div>
+						<!-- pad grid -->
+						<div id="pads">
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+							<div class="pad"></div>
+						</div>
+						<div id="logos">
+							<span id="DorkLogo">DORK</span>
+							<span id="brandlogo">midiKONTROL</span>
+						</div>
+						<!-- The Control Unit a few additional features will be added later-->
+						<div id="controlunit">
+							<div id="controlunitHeader">
+								<div class="led-container">
+									<div class="led-display led-control"></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="smalltext">TEMPO</span>
+								<div id="tempoled"></div>
+								<div id="tempoKnob"></div>
+								<div id="midiListContainer">
+									 <select id="midiIn"><option>-no MIDI-</option></select>
+								</div>
+							</div>
+						</div>
+						<!-- Individual channels will have custom ids later. but for now just a mock up -->
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led1" class="led-display led-passive"><span id="led-text1" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">1</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb16" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s80" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led2" class="led-display led-passive"><span id="led-text2" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">2</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb17" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s81" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led3" class="led-display led-passive"> <span id="led-text3" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">3</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb18" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s82" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led4" class="led-display led-passive"><span id="led-text4" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">4</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb19" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s83" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led5" class="led-display led-passive"><span id="led-text5" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">5</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb48" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s87" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led6" class="led-display led-passive"><span id="led-text6" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">6</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb49" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s88" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led7" class="led-display led-passive"><span id="led-text7" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">7</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb50" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s89" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						<div class="channel">
+							<div class="channel-display">
+								<div class="led-container">
+									<div id="led8" class="led-display led-passive"><span id="led-text8" class="ledText">0</span></div>
+								</div>
+							</div>
+							<div class="controlContent">
+								<span class="NumberedText">8</span>
+								<div class="knobcontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="knb51" class="knob"><img src="img/knob.png" alt="knob" height="56" width="56"/></div>
+								</div>
+								<div class="slidercontainer">
+									<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+									<div id="s90" class="slider"></div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="screws right"></div>
+					</div>
+					<!-- Pitchwheel and Keyboard -->
+					<div id="keyboardpart">
+						<div id="pitchWheel"></div>
+						<div id="keys">
+							<!-- 54 px; 1px padding; 22st-->
+							<div id="blackkeys">
+								<div id="k49" class="black left"></div>
+								<div id="k51" class="black left"></div>
+								<div class="spacer"></div>
+								<div id="k54" class="black left"></div>
+								<div id="k56" class="black left"></div>
+								<div id="k58" class="black left"></div>
+								<div class="spacer"></div>
+								<div id="k61" class="black left"></div>
+								<div id="k63" class="black left"></div>
+								<div class="spacer"></div>
+								<div id="k66" class="black left"></div>
+								<div id="k68" class="black left"></div>
+								<div id="k70" class="black left"></div>
+								<div class="spacer"></div>
+								<div id="k73" class="black left"></div>
+								<div id="k75" class="black left"></div>
+								<div class="spacer"></div>
+								<div id="k78" class="black left"></div>
+								<div id="k80" class="black left"></div>
+								<div id="k82" class="black left"></div>
+							</div>
+							<div id="whitekeys">
+								<!-- DONT FORGET TO SET ID!!!! OBS OBS OBS -->
+								<div id="k48" class="white left"></div>
+								<div id="k50" class="white left"></div>
+								<div id="k52" class="white left"></div>
+								<div id="k53" class="white left"></div>
+								<div id="k55" class="white left"></div>
+								<div id="k57" class="white left"></div>
+								<div id="k59" class="white left"></div>
+								<div id="k60"  class="white left"></div>
+								<div id="k62" class="white left"></div>
+								<div id="k64" class="white left"></div>
+								<div id="k65" class="white left"></div>
+								<div id="k67" class="white left"></div>
+								<div id="k69" class="white left"></div>
+								<div id="k71" class="white left"></div>
+								<div id="k72" class="white left"></div>
+								<div id="k74" class="white left"></div>
+								<div id="k76" class="white left"></div>
+								<div id="k77" class="white left"></div>
+								<div id="k79" class="white left"></div>
+								<div id="k81" class="white left"></div>
+								<div id="k83" class="white left"></div>
+								<div id="k84" class="white left"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebarright"></div>
+				<footer>
+					<p>
+						&copy; Copyright  by Anthony Dry
+					</p>
+				</footer>
+			</div>
+		</div>
+		<div id="MIDIPlugin"></div>
+	</body>
+</html>

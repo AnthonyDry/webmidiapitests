@@ -1,0 +1,320 @@
+@font-face {
+			    font-family: 'korg';
+			    src: url('font/korg-webfont.eot');
+			    src: url('font/korg-webfont.eot?#iefix') format('embedded-opentype'),
+			         url('font/korg-webfont.woff') format('woff'),
+			         url('font/korg-webfont.ttf') format('truetype'),
+			         url('font/korg-webfont.svg#korgregular') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+			
+			}
+			body{
+				background-color:#323232;
+			}
+			#synthbody{
+				width:1400px;
+				height:600px;
+				background-color:#0a0a0a;
+				float:left;
+			}
+			.sidebarleft{
+				width:15px;
+				height:610px;
+				float:left;
+				background-image:url("img/sidesbg.jpg");
+				margin-top:-5px;
+				border-radius:4px;
+			}
+			.sidebarright{
+				width:15px;
+				height:610px;
+				float:left;;
+				background-image:url("img/sidesbg.jpg");
+				margin-top:-5px;
+				border-radius:4px;
+			}
+			#synthControl{
+				width:1394px;
+				height:370px;
+				background-color:grey;
+				background-image:url("img/midicontrolbg.jpg");
+				margin-left:3px;
+				margin-top:2px;
+				border-top-left-radius:10px 5px;
+				border-top-right-radius:10px 5px;
+				border-bottom-left-radius:10px 10px;
+				border-bottom-right-radius:10px 10px;
+			}
+			.screws{
+				width:35px;
+				height:100%;
+				
+				
+			}
+			#pads{
+				width:340px;
+				height:340px;
+				border-radius:10px;
+				background-color:black;
+				float:left;
+				margin-top:15px;
+				display:table;
+			}
+			#logos
+			{
+				width:984px;
+				height:45px;
+				float:left;	
+			}
+			#controlunit{
+				
+				width:158px;
+				height:310px;
+				float:left;
+			}
+			.channel{	
+				
+				width:103px;
+				height:310px;
+				float:left;
+			}
+			.controlContent{
+				width:100%;
+				height:85%;
+				border-right:solid 1px; black;
+				
+			}
+			#controlunitHeader{
+				width:100%;
+				height:40px;
+			}
+			.channel-display{
+				width:100%;
+				height:40px;
+			}
+			.right{
+				float:right;
+				margin-top:-45px;
+			}
+			.left{
+				float:left;
+			}
+			footer{
+				clear:both;
+				text-align:center;
+				font-family: 'Great Vibes', cursive;
+				color:white;
+				font-size: 20px;
+			}
+			.led-container{
+				background-color:black;
+				border-radius:5px;
+				margin:0 auto;
+				height:30px;
+				width:98px;
+			}
+			.led-display{
+				height:24px;
+				width:92px;
+				margin-left:3px;
+				position:relative;
+				top:3px;
+			}
+			.led-control{
+				background-color:#ff970a;
+			}
+			.led-passive{
+				background-color:red;
+			}
+			.led-active{
+				background-color:#BDFF38;
+			}
+			.smalltext{
+				font-family: sans-serif;
+				font-size:9px;
+				font-weight:bold;
+				position:relative;
+				left:15px;
+				top:-7px;
+			}
+			#tempoled{
+				width:10px;
+				height:10px;
+				border-radius:5px;
+				background-color:black;
+				position:relative;
+				top:-4px;
+				left:25px;
+			}
+			#tempoKnob{
+				width:68px;
+				height:68px;
+				border-radius:38px;
+				background-image:url("img/tempoknob.png");
+				background-size:100% 100%;
+				position:relative;
+				left:44px;
+				top:-16px;
+			}
+			#midiListContainer{
+				background-color:black;
+				position:relative;
+				width:140px;
+				height:70px;
+				border-radius:6px;
+				left:10px;
+			}
+			#midiIn{
+				position: relative;
+				top:10px;
+				left:25px;
+				background-color:black;
+				color:white;
+				border:none;
+			}
+			.NumberedText{
+				font-family: sans-serif;
+				font-size:9px;
+				font-weight:bold;
+				position:relative;
+				left:5px;
+				top:-7px;
+			}
+			.knobcontainer{
+				width:68px;
+				height:68px;
+				border-radius:38px;
+				background-color:#1c1c1c;
+				position:relative;
+				top:-10px;
+				left:18px;
+				box-shadow:inset 0px 0px 2px 1px black;
+				
+			}
+			.knob{
+				position:relative;
+				top:6px;
+				left:6px;
+			}
+			#DorkLogo{
+				font-family: "korg";
+				font-size:28px;
+				position:relative;
+				top:15px;
+				left:20px;
+			}
+			.slidercontainer{
+				background-image:url("img/slidercontbg.png");
+				width:40px;
+				height:180px;
+				position:relative;
+				left:31px;
+				border-radius:4px;
+			}
+			.slider{
+				width:30px;
+				height:50px;
+				background-image:url("img/sliderbg.png");
+				background-size:100% 100%;
+				position:relative;
+				left:5px;
+				/* max value for top is 5px;
+				 * min value for top is 125px; ;) */
+				top:125px;
+			}
+			#brandlogo{
+				float:right;
+				font-size:18px;
+				position:relative;
+				font-family:sans-serif;
+				border-bottom:solid 5px black;
+				top:15px;
+			}
+			#pitchWheel{
+				width:195px;
+				height:225px;
+				float:left;
+			}
+			.white{
+				background-color:white;
+				width:52px;
+				height:208px;
+				margin-left:2px;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				box-shadow:inset 0px 0px 5px 1px black;
+			}
+			.black{
+				background-color:#0b0b0b;
+				width:28px;
+				height:130px;
+				margin-right:26px;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				box-shadow:inset 0px 0px 5px 1px black;
+			}
+			.spacer{
+				width:54px;
+				height:1px;
+				float:left;
+				
+			}
+			#keys{
+				position:relative;
+				top:18px;
+			}
+			#blackkeys{
+				position:absolute;
+				z-index:900;
+				width:1100px;
+				left:234px;
+			}
+			.pad{
+				
+				width:60px;
+				height:60px;
+				background-image: url("img/pad.png");
+				background-size:100% 100%;
+				position:relative;
+				left:10px;
+				float:left;
+				top:10px;
+				margin:10px;
+				
+				
+			}
+			#MIDIPlugin{
+				 visibility: hidden; 
+			}
+			.pressed{
+				background-color:red;
+			}
+			.ledChange{
+				background-color:green;
+			}
+			.ledText{
+				position:relative;
+				display:inline-block;
+				text-align:center;
+				width:100%;
+				float:right;
+				line-height:1.6em;
+				margin:0 auto;
+				font-family: 'Squada One', cursive;
+				
+				
+			}
+			#wrapper{
+				position:relative;
+				left:50%;
+				margin-left:-700px;
+			}
+			header{
+				text-align:center;
+				font-family: 'Squada One', cursive;
+				color:#0f0f0f;
+				font-size:40px;
+				text-shadow: 0px 2px 2px rgba(85, 85, 85, 0.4); }
+			}
+			
