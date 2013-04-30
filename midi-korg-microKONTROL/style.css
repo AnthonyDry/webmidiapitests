@@ -222,6 +222,8 @@
 				/* max value for top is 5px;
 				 * min value for top is 125px; ;) */
 				top:125px;
+				margin-top:5px;
+				margin-bottom:5px;
 			}
 			#brandlogo{
 				float:right;
