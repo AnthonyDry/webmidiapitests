@@ -82,6 +82,16 @@ function controller( number, value ) {
 		
 	}
 }
+//TODO: Implement when i have time for it. 
+function DispalyInControl(type,number){
+	/*
+	 * displays the type of input and what number gets passed.
+	 * Should do some thing else for the keys. could be a problem when your able to press more keys at once.
+	 * 
+	 */
+}
+
+
 // HELP FUNCTIONS
 function ChangeKnob(el,text,value)
 {
@@ -123,45 +133,3 @@ function precise_round(num,decimals)
 }
 
 
-$(function() {
-	var dragableFaders = ["#s80","#s81","#s82","#s83","#s87","#s88","#s89","#s90"];
-	
-	for(var i = 0; i < dragableFaders.length; i++)
-	{
-	
-    	$(dragableFaders[i]).draggable({
-    		axis: "y", 
-    		containment: "parent",
-    		drag:function(event, ui){
-    			var led = "";
-    			var ledText = "";
-    			var currentPosition = ui.position.top - 125;
-    			var controlId = this.id.substring(1);
-    			//Oh god this i s worse then terrible! will fix soon
-				if(controlId == 80){led = "led1"; ledText = "led-text1";}
-				else if(controlId == 81){led = "led2"; ledText = "led-text2";}
-				else if(controlId == 82){led = "led3"; ledText = "led-text3";}
-				else if(controlId == 83){led = "led4"; ledText = "led-text4";}
-				else if(controlId == 87){led = "led5"; ledText = "led-text5";}
-				else if(controlId == 88){led = "led6"; ledText = "led-text6";}
-				else if(controlId == 89){led = "led7"; ledText = "led-text7";}
-				else if(controlId == 90){led = "led8"; ledText = "led-text8";}
-	    		
-	    		//Changes colour of the display.
-				var e = document.getElementById(led);
-				e.classList.add("ledChange");
-				
-				
-				e = document.getElementById(ledText);
-				//this is terrible but will fix it when i got time for it.
-				/*
-				 * For some stupid reason I get negatives when i do this normalization what is it that I'm missing??====
-				 */
-				var num = currentPosition / 120;
-				var val = Math.round(num*Math.pow(10,2))/Math.pow(10,2);
-				e.innerText = val;
-	    		
-    		},
-    	});
-   	}
-});

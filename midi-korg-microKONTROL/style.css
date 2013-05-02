@@ -12,6 +12,14 @@
 			body{
 				background-color:#323232;
 			}
+			p{
+				color:white;
+				font-family: 'Squada One', cursive;
+				text-align:center;
+				padding:0px;
+				margin:0px;
+				position:relative;
+			}
 			#synthbody{
 				width:1400px;
 				height:600px;
@@ -161,17 +169,29 @@
 				background-color:black;
 				position:relative;
 				width:140px;
-				height:70px;
+				height:80px;
 				border-radius:6px;
 				left:10px;
 			}
 			#midiIn{
 				position: relative;
-				top:10px;
-				left:25px;
+				
+				left:20px;
 				background-color:black;
 				color:white;
 				border:none;
+				width:100px;
+				max-width:100px;
+			}
+			#midiOut{
+				position: relative;
+				
+				left:20px;
+				background-color:black;
+				color:white;
+				border:none;
+				width:100px;
+				max-width:100px;
 			}
 			.NumberedText{
 				font-family: sans-serif;
@@ -196,6 +216,10 @@
 				position:relative;
 				top:6px;
 				left:6px;
+				height:56px;
+				width:56px;
+				background-image:url("img/knob.png");
+				background-size:100% 100%;
 			}
 			#DorkLogo{
 				font-family: "korg";
@@ -312,6 +336,7 @@
 				left:50%;
 				margin-left:-700px;
 			}
+			
 			header{
 				text-align:center;
 				font-family: 'Squada One', cursive;
